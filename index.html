@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gift Notification</title>
+    <style>
+      body {
+        background-color: #cbe9ff;
+        font-family: "Courier New", monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .popup {
+        width: 320px;
+        padding: 20px;
+        background: white;
+        border: 5px solid #007acc;
+        border-radius: 5px;
+        box-shadow: 5px 5px 0px #004e99;
+        text-align: center;
+        position: absolute;
+        display: none;
+        animation: popupAnim 0.4s ease-out;
+      }
+
+      .active {
+        display: block;
+      }
+
+      @keyframes popupAnim {
+        0% {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .titlebar {
+        background-color: #007acc;
+        color: white;
+        padding: 5px;
+        text-align: right;
+      }
+
+      .titlebar span {
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      .popup p {
+        font-size: 18px;
+        color: #007acc;
+        margin: 20px 0;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .buttons button {
+        background-color: #b3e0ff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 10px;
+        box-shadow: 2px 2px #80bfff;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .buttons button:hover {
+        background-color: #80bfff;
+      }
+
+      .judul {
+        font-size: 15px;
+        color: #4e6983;
+        font-style: italic;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- POPUP 1 -->
+    <div class="popup active" id="popup1">
+      <div class="titlebar">
+        <span>–</span>
+        <span onclick="alert('bukan yang iniii')">❌</span>
+      </div>
+      <p>1 Message Are Waiting For You</p>
+      <div class="buttons">
+        <button onclick="showPopup2()">Click Here!</button>
+      </div>
+    </div>
+
+    <!-- POPUP 2 -->
+    <div class="popup" id="popup2">
+      <div class="titlebar">
+        <span>–</span>
+        <span onclick="alert('emang masih mau di close kah?')">❌</span>
+      </div>
+      <p>
+        haiii hann, hope you fine today. i know you never feel good there. but
+        you're great. do everything by yourself and still improve. even its hard
+        to keep everything alright, but you do. idk how much you've been taking,
+        up and down, the rollercoaster of life and sometimes you just need a
+        peace.
+      </p>
+      <div class="buttons">
+        <button onclick="showPopup3()">Next</button>
+      </div>
+    </div>
+
+    <!-- POPUP 3 -->
+    <div class="popup" id="popup3">
+      <div class="titlebar">
+        <span>–</span>
+        <span onclick="alert('belom selesaiiii, sabar yaaa')">❌</span>
+      </div>
+      <p>
+        you carried more than you can. its too late to put down everything what
+        you've take. and maybe get heavier every day.
+      </p>
+      <div class="buttons">
+        <button onclick="showPopup4()">Next</button>
+      </div>
+    </div>
+
+    <!-- POPUP 4 -->
+    <div class="popup" id="popup4">
+      <div class="titlebar">
+        <span>–</span>
+        <span onclick="alert('iseng y mencetin mulu')">❌</span>
+      </div>
+      <p>
+        but trust me, you can finish as a winner. the way you keep it still
+        going even you're not okay. im proud of it. keep up, but don't push too
+        hard.
+      </p>
+      <div class="buttons">
+        <button onclick="showPopup5()">Next</button>
+      </div>
+    </div>
+
+    <!-- POPUP 5 -->
+    <div class="popup" id="popup5">
+      <div class="titlebar">
+        <span>–</span>
+        <span onclick="alert('ngeyel btull budak satu ini')">❌</span>
+      </div>
+      <p>
+        and i just want to say, you can share everything to me if you feel down.
+        i'll try as best as i can to keep you safe eheh. i do cause you've did
+        to me before. and now is my turn to make you fineeeeee.
+      </p>
+      <div class="buttons">
+        <button onclick="showPopup6()">Next</button>
+      </div>
+    </div>
+
+    <!-- POPUP 6 -->
+    <div class="popup" id="popup6">
+      <div class="titlebar">
+        <span>–</span>
+        <span onclick="alert('dikit lagii plisss, abis ini')">❌</span>
+      </div>
+      <p>and here's the songs that might be related to you</p>
+      <div class="buttons">
+        <button onclick="showPopup7()">Next</button>
+      </div>
+    </div>
+
+    <!-- POPUP 7 -->
+    <div class="popup" id="popup7">
+      <div class="titlebar">
+        <span>–</span>
+        <span onclick="alert('abis ini, abis ini maksudnyaa eheh')">❌</span>
+      </div>
+      <p>
+        romanticizing an eternal activity? why not. bermimpi buat hidup dengan
+        layak ditengah grasak-grusuk kehidupan yang ga akan pernah ada abisnya.
+        hundred of drama, thousand of disappointment, million second of
+        overthinking about future and hopefully, we are the winner at the end.
+        not for the world, but for ourselves.
+      </p>
+      <audio id="myAudio" src="lagu1.mp3"></audio>
+      <div class="buttons">
+        <button id="playPauseBtn">Play</button>
+        <button onclick="showPopup8()">Next</button>
+      </div>
+      <div class="judul">ini abadi - perunggu</div>
+    </div>
+
+    <!-- POPUP 8 -->
+    <div class="popup" id="popup8">
+      <div class="titlebar">
+        <span>–</span>
+        <span onclick="alert('WKWKW abis ini maksudnyaa')">❌</span>
+      </div>
+      <p>
+        the art of peacefull mind. let your positive energy take your mind and
+        soul in the middle of hopeless and restlessness.
+      </p>
+      <audio id="myAudio2" src="lagu2.mp3"></audio>
+      <div class="buttons">
+        <button id="playPauseBtn2">Play</button>
+        <button onclick="showPopup9()">Next</button>
+      </div>
+      <div class="judul">balerina - efek rumah kaca</div>
+    </div>
+
+    <!-- POPUP 9 -->
+    <div class="popup" id="popup9">
+      <div class="titlebar">
+        <span>–</span>
+        <span onclick="alert('ehhh bentarr, kayanya masih ada lagi')">❌</span>
+      </div>
+      <p>
+        manisfestasi kata "akhir" yang ternyata lebih dalem dari palung mariana.
+        di tempat kompetisi yang pemenangnya pun cuma ada di kepala kita.
+        berharap kalo besok, kita adalah bagian dari pemenang.
+      </p>
+      <audio id="myAudio3" src="lagu3.mp3"></audio>
+      <div class="buttons">
+        <button id="playPauseBtn3">Play</button>
+        <button onclick="showPopup10()">Next</button>
+      </div>
+      <div class="judul">besok mungkin kita sampai - hindia</div>
+    </div>
+
+    <!-- POPUP 10 -->
+    <div class="popup" id="popup10">
+      <div class="titlebar">
+        <span>–</span>
+        <span onclick="alert('bener abis ini sumpahh')">❌</span>
+      </div>
+      <p>
+        mencari arti hidup sampe ribuan kilometer, bermimpi sampe 7 lapisan
+        langit, dan menggali mati-matian buat hidup yang layak sampe inti bumi.
+        tapi masih ada ratusan cara gagal yang "siap saji". percaya kalo doa ibu
+        selalu bareng disetiap jalan yang dilewatin.
+      </p>
+      <audio id="myAudio4" src="lagu4.mp3"></audio>
+      <div class="buttons">
+        <button id="playPauseBtn4">Play</button>
+        <button onclick="showPopup11()">Next</button>
+      </div>
+      <div class="judul">tapi - perunggu</div>
+    </div>
+
+    <!-- POPUP 11 -->
+    <div class="popup" id="popup11">
+      <div class="titlebar">
+        <span>–</span>
+        <span onclick="tmblAkhir()">❌</span>
+      </div>
+      <p>
+        jadiii jangan ragu yaa buat minta bantuan atau apapun. malah seneng
+        banget kalo emang km mau buat minta tolong eheh. and also, its like kind
+        of redemption for mistakes what i did to you. makasiii udah dilanjut
+        sampe akhir — walaupun gatau berapa kali pencet tanda X nya WKWKWK. lvu.
+      </p>
+      <div class="buttons">
+        <button onclick="showPopup1()">Start Over</button>
+      </div>
+    </div>
+
+    <script>
+      const audio1 = document.getElementById("myAudio");
+      const btn1 = document.getElementById("playPauseBtn");
+
+      btn1.addEventListener("click", function () {
+        if (audio1.paused) {
+          audio1.play();
+          btn1.textContent = "Pause";
+        } else {
+          audio1.pause();
+          btn1.textContent = "Play";
+        }
+      });
+
+      const audio2 = document.getElementById("myAudio2");
+      const btn2 = document.getElementById("playPauseBtn2");
+
+      btn2.addEventListener("click", function () {
+        if (audio2.paused) {
+          audio2.play();
+          btn2.textContent = "Pause";
+        } else {
+          audio2.pause();
+          btn2.textContent = "Play";
+        }
+      });
+
+      const audio3 = document.getElementById("myAudio3");
+      const btn3 = document.getElementById("playPauseBtn3");
+
+      btn3.addEventListener("click", function () {
+        if (audio3.paused) {
+          audio3.play();
+          btn3.textContent = "Pause";
+        } else {
+          audio3.pause();
+          btn3.textContent = "Play";
+        }
+      });
+
+      const audio4 = document.getElementById("myAudio4");
+      const btn4 = document.getElementById("playPauseBtn4");
+
+      btn4.addEventListener("click", function () {
+        if (audio4.paused) {
+          audio4.play();
+          btn4.textContent = "Pause";
+        } else {
+          audio4.pause();
+          btn4.textContent = "Play";
+        }
+      });
+
+      function showPopup2() {
+        document.getElementById("popup1").classList.remove("active");
+        const popup2 = document.getElementById("popup2");
+        popup2.classList.add("active");
+      }
+
+      function showPopup3() {
+        document.getElementById("popup2").classList.remove("active");
+        const popup3 = document.getElementById("popup3");
+        popup3.classList.add("active");
+      }
+
+      function showPopup4() {
+        document.getElementById("popup3").classList.remove("active");
+        const popup4 = document.getElementById("popup4");
+        popup4.classList.add("active");
+      }
+
+      function showPopup5() {
+        document.getElementById("popup4").classList.remove("active");
+        const popup5 = document.getElementById("popup5");
+        popup5.classList.add("active");
+      }
+
+      function showPopup6() {
+        document.getElementById("popup5").classList.remove("active");
+        const popup6 = document.getElementById("popup6");
+        popup6.classList.add("active");
+      }
+
+      function showPopup7() {
+        document.getElementById("popup6").classList.remove("active");
+        const popup7 = document.getElementById("popup7");
+        popup7.classList.add("active");
+      }
+
+      function showPopup8() {
+        document.getElementById("popup7").classList.remove("active");
+        const popup8 = document.getElementById("popup8");
+        popup8.classList.add("active");
+        audio1.pause();
+        audio1.currentTime = 0;
+      }
+      function showPopup9() {
+        document.getElementById("popup8").classList.remove("active");
+        const popup9 = document.getElementById("popup9");
+        popup9.classList.add("active");
+        audio2.pause();
+        audio2.currentTime = 0;
+      }
+      function showPopup10() {
+        document.getElementById("popup9").classList.remove("active");
+        const popup10 = document.getElementById("popup10");
+        popup10.classList.add("active");
+        audio3.pause();
+        audio3.currentTime = 0;
+      }
+      function showPopup11() {
+        document.getElementById("popup10").classList.remove("active");
+        const popup11 = document.getElementById("popup11");
+        popup11.classList.add("active");
+        audio4.pause();
+        audio4.currentTime = 0;
+      }
+      function showPopup1() {
+        document.getElementById("popup11").classList.remove("active");
+        const popup1 = document.getElementById("popup1");
+        popup1.classList.add("active");
+      }
+      function tmblAkhir() {
+        alert(
+          "sudaaa selesaii. makasii yaa sudah baca sampe akhir. hope you always okayy. maap ya klo krinj🙏🙏🙏🙏🙏"
+        );
+        document.getElementById("popup11").classList.remove("active");
+        document.getElementById("popup1").classList.remove("active");
+      }
+    </script>
+  </body>
+</html>
